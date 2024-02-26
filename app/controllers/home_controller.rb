@@ -1,31 +1,58 @@
 class HomeController < ApplicationController
   def index
+    @numero_whatsapp = "+554999482859"
+    @meu_nome = params[:nome]
+
   end
 
   def resultado
-    @descricao = params[:desc]
-    @nm1 = params[:nm1].to_f
-    @nm2 = params[:nm2].to_f
-    @resultado = @nm1 + @nm2
-    puts "CARALHOOOOOOOOO"
+    @numero1 = params[:nm1].to_f
+    @numero2 = params[:nm2].to_f
+    @operador = params[:operacao]
 
-    #  respond_to do |format|
-    #    format.html { redirect_to resultado_path}
-    #    format.json { render json: { descricao: @descricao } } # Responder ao formato JSON
-    #  end
+    @resultado =
+    case @operador
+    when "+"
+      @numero1 + @numero2
+
+    when "-"
+      @numero1 - @numero2
+
+    when "x"
+      @numero1 * @numero2
+
+    when "÷"
+      @numero1 / @numero2
+
+    end
   end
 
-  def menos
-    @nm1_2 = params[:nm1_2].to_f
-    @nm2_2 = params[:nm2_2].to_f
-    @resultado = @nm1_2 - @nm2_2
-    puts "CARALHO 2 "
+  def sobre
+    render layout: 'no-back'
 
   end
 
-  def mult
-    @nm1_3 = params[:nm1_3].to_f
-    @nm2_3 = params[:nm2_3].to_f
-    @resultado = @nm1_3 * @nm2_3
+  def palavras
+    @palavra = params[:work]
+    @quantidade = params[:qnt].to_i
+
+    @resultado = ''
+
+    @quantidade.times do |i|
+    @resultado += @palavra
+
+    @resultado += ', ' unless i == @quantidade - 1
+
+    end
+
+    render layout: 'no-back'
+    #render :palavras
+  end
+
+  def advinhar
+    @nm1_rand = rand(0..10)
+    @nm2_rand = rand(0..10)
+
+    flash[:notice] = "#{@nm1_rand}"
   end
 end

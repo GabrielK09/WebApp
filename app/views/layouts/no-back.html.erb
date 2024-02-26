@@ -4,7 +4,6 @@
     <title>WebApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -20,8 +19,7 @@
     <%= link_to "Twitch", "https://www.twitch.tv/otaldotsuki", class: 'social-media_3', target: '_blank'  %>
     <%= link_to "WhatsApp", "https://wa.me/#{@numero_whatsapp}", class: 'social-meida_4', target: '_blank'  %>
     <%= link_to "E-mail", "mailto:gabikochem55@gmail.com", class: 'social-meida_5', target: '_blank' %>
-    <%= link_to "Sobre", 'sobre', class: 'about' %> 
-    
+    <%= link_to "Voltar", './', class: 'back' %>
 
   </nav>
     <%= yield %>

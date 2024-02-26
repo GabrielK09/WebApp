@@ -1,109 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Minha Página Pessoal</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<div class="Container ">
+<div class='Form'>
+  <%= form_tag( '/resultado' , remote: true) do |f| %>
     
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #666;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    section {
-      padding: 20px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Seja bem-vindo à minha página pessoal!</h1>
-  </header>
-
-  <nav>
-    <a href="#sobre">conta de mais +</a>
-    <a href="#experiencia">conta de menos -</a>
-    <a href="#projetos">conta multiplicação *</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
-  <section id="sobre">
-  <h3> Conta de Adição: 
-  <%= form_tag('/resultado') do %>
-
-    <%= label_tag :nm1, "Número 1:" %><br>
+    <label for="operacao">Selecione a operação:</label>
+    <%= select_tag 'operacao', options_for_select([['Soma', '+'], ['Subtração', '-'], ['Multiplicação', 'x'], ['Divisão', '÷']]), class: 'operador' %><br>
+    
+    <%= label_tag :nm1, "Número 1:", class: 'nm1' %>
     <%= text_field_tag :nm1 %><br>
 
-    <%= label_tag :nm2, "Número 2:"%><br>
-    <%= text_field_tag :nm2 %><br>
-
-    <%= submit_tag 'Submit', action: 'resultado' %>
+    <%= label_tag :nm2, "Número 2:", class: 'nm2' %>
+    <%= text_field_tag :nm2%><br>
+    <%= submit_tag 'Calcular', class: 'calcular' %>
 
   <% end %>
+  
+</div>
 
-  </section>
+<div class="Form-2">
+  <%= form_tag( '/palavras', remote: true) do  %>
+      
+      <%= label_tag :work, "Digite a palavra: "%>
+      <%= text_field_tag :work %>
 
-  <section id="experiencia">
+      <%= label_tag :qnt, "Quantidade: "%>
+      <%= text_field_tag :qnt %>
 
-  <h3> Conta de Menos: 
-  <%= form_tag('/menos') do%>
-
-    <%= label_tag :nm1_2, "Número 1:"%><br>
-    <%= text_field_tag :nm1_2 %><br>
-
-    <%= label_tag :nm2_2, "Número 2:"%><br>
-    <%= text_field_tag :nm2_2 %><br>
-    
-    <%= submit_tag 'Submit', action: 'menos' %>
+      <%= submit_tag "Enviar" %>
   <% end %>
+</div>
 
-  </section>
-
-  <section id="projetos">
-  <h3> Conta de Multiplicação: 
-  <%= form_tag('/mult') do%>
-
-    <%= label_tag :nm1_3, "Número 1:"%><br>
-    <%= text_field_tag :nm1_3 %><br>
-
-    <%= label_tag :nm2_3, "Número 2:"%><br>
-    <%= text_field_tag :nm2_3 %><br>
-    
-    <%= submit_tag 'Submit', action: 'mult' %>
-  <% end %>
-  </section>
-  <footer>
-    <p>&copy; 2024 Minha Página Pessoal</p>
-  </footer>
-</body>
-</html>
+<p><%= @nm1_rand%>
+</div>

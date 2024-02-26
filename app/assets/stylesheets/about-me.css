@@ -1,0 +1,39 @@
+.about{
+    display: flex;
+}
+
+.about-me{
+    width: 300px;
+    margin: 0 100px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+    display: flex;
+}
+
+.about-curri{
+    width: 460px;
+    margin: 0 70px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+    height: 90%;
+    
+}
+
+.tecs {
+    display: flex; /* Ativa o Flexbox no contêiner */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+  }
+  
+  .tecs img {
+    width: auto; /* Permite que a largura se ajuste automaticamente */
+    height: 50px; /* Define a altura desejada */
+    margin-right: 10px; /* Adiciona margem entre as imagens */
+    margin-left: 5px;
+  }
+  
