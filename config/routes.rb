@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   get '/sobre', to: 'home#sobre'
   get 'home/index', to: 'home#index'
+  post '/index', to: 'home#index'
 
   post '/palavras', to: 'home#palavras'
   get '/palavras', to: 'home#palavras'
 
   post '/check_answer', to: 'home#check_answer'
+
+  post '/work_random', to: 'home#work_random'
 end

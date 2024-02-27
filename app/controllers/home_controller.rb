@@ -6,6 +6,15 @@ class HomeController < ApplicationController
     $num1 = rand(0..10)
     $num2 = rand(0..10)
 
+
+    @palavra = params[:palavra]
+
+    if @palavra.present?
+      @reverse = @palavra.reverse
+      flash[:notice] = "Palavra Invertida: #{@reverse}"
+    else
+      flash.delete(:notice)  # Certificando-se de limpar a flash se não houver palavra presente
+    end
   end
 
   def resultado
@@ -57,7 +66,11 @@ class HomeController < ApplicationController
 
     @resposta_correta = $num1 + $num2
 
+  end
 
+  def work_random
+    @quantia_letras = params[:letras].to_i
 
+    @word = Cicero.words(@quantia_letras)
   end
 end

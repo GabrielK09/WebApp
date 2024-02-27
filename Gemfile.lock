@@ -70,6 +70,7 @@ GEM
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cicero (0.0.1)
     concurrent-ruby (1.2.3)
     crass (1.0.6)
     date (3.3.4)
@@ -194,6 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cicero
   debug
   importmap-rails
   jbuilder

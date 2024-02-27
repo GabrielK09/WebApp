@@ -32,11 +32,38 @@
 <div class="Form-3">
  <%= form_tag('/check_answer', method: 'post') do %>
   <p>
-    <%= $num1 %> + <%= $num2  %> =
-    <%= text_field_tag :tentativa %>
+    <%= $num1 %> + <%= $num2  %> = <br>
+    Resposta: <%= text_field_tag :tentativa %>
+
   </p>
+
   <%= submit_tag 'Verificar' %>
 
+<% end %>
+</div>
+
+<div class="Form-4">
+  <%= form_tag('/work_random', remote: true) do %> 
+  
+    <%= label_tag :letras, "Quantidade de Caracter: "%>
+    <%= text_field_tag :letras %>
+    <%= submit_tag 'Gerar' %>
+    
+  <% end%>
+
+</div>
+
+<div class="Form-5">
+
+  <%= form_tag('/index', method: :post, remote: true) do %>
+  <%= label_tag :palavra, "Palavra: "%>
+  <%= text_field_tag :palavra %>
+
+  <%= submit_tag "Inverter" %>
+
+  <% if flash[:notice].present? %>
+    <%= flash[:notice] %>
+  <% end %>
 <% end %>
 
 </div>
