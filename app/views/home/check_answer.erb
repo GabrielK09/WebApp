@@ -1,0 +1,14 @@
+<div class="content">
+
+  <% if @minha_resposta == @resposta_correta %>
+    <p>Resposta correta!</p>
+    
+  <% else  %>
+    <p>Resposta incorreta!, resultado correto: de <%= $num1 %> + <%= $num2%>: <%= @resposta_correta %></p>
+
+  <% end %>
+
+  <%= link_to "Voltar", './', class: 'link-voltar' %>
+
+</div>
+

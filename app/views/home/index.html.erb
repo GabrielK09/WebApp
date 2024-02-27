@@ -29,5 +29,16 @@
   <% end %>
 </div>
 
-<p><%= @nm1_rand%>
+<div class="Form-3">
+ <%= form_tag('/check_answer', method: 'post') do %>
+  <p>
+    <%= $num1 %> + <%= $num2  %> =
+    <%= text_field_tag :tentativa %>
+  </p>
+  <%= submit_tag 'Verificar' %>
+
+<% end %>
+
+</div>
+
 </div>

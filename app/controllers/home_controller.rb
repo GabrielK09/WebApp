@@ -3,6 +3,9 @@ class HomeController < ApplicationController
     @numero_whatsapp = "+554999482859"
     @meu_nome = params[:nome]
 
+    $num1 = rand(0..10)
+    $num2 = rand(0..10)
+
   end
 
   def resultado
@@ -45,14 +48,16 @@ class HomeController < ApplicationController
 
     end
 
-    render layout: 'no-back'
+    #render layout: 'no-back'
     #render :palavras
   end
 
-  def advinhar
-    @nm1_rand = rand(0..10)
-    @nm2_rand = rand(0..10)
+  def check_answer
+    @minha_resposta = params[:tentativa].to_i
 
-    flash[:notice] = "#{@nm1_rand}"
+    @resposta_correta = $num1 + $num2
+
+
+
   end
 end

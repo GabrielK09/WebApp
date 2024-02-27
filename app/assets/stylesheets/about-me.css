@@ -29,8 +29,22 @@
     display: flex; /* Ativa o Flexbox no contêiner */
     align-items: center; /* Alinha os itens verticalmente ao centro */
   }
+
+.tecs-2{
+    width: 500;
+    margin-top: 120px;
+    margin-left: -569px;
+    /* margin: 0 70px; */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+    height: 90%;
+    
+}
   
-  .tecs img {
+  .tecs img, .tecs-2 img {
     width: auto; /* Permite que a largura se ajuste automaticamente */
     height: 50px; /* Define a altura desejada */
     margin-right: 10px; /* Adiciona margem entre as imagens */

@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   get '/sobre', to: 'home#sobre'
   get 'home/index', to: 'home#index'
 
-  get '/advinhar', to: 'home#advinhar'
-  post 'home/advinhar', to: 'home#advinhar'
-
   post '/palavras', to: 'home#palavras'
   get '/palavras', to: 'home#palavras'
+
+  post '/check_answer', to: 'home#check_answer'
 end

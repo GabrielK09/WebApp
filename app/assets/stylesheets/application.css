@@ -79,7 +79,17 @@ nav a{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
-.Form, .Form-2{
+.content-2{
+  width: 100% / 4;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.Form, .Form-2, .Form-3{
   flex: 1; /* Distribui o espaço disponível igualmente entre os elementos */
   width: 300px;
   margin: 0 auto;
@@ -105,7 +115,7 @@ nav a{
     border-radius: 4px;
   }
   
-  input[type="submit"], .link-voltar {
+  input[type="submit"], .link-voltar, .link-voltar {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -114,6 +124,7 @@ nav a{
     cursor: pointer;
     text-decoration: none;
   }
+
   
   input[type="submit"]:hover, .link-voltar:hover {
     background-color: #45a049;
