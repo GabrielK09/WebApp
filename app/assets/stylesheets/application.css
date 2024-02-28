@@ -1,16 +1,16 @@
 body{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
 
 }
 
 .Index-Header{
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
 
 }
 
@@ -64,20 +64,21 @@ nav a{
 
 .Container {
   display: flex;
-  justify-content: space-between; /* Distribui os elementos igualmente ao longo do eixo principal */
-  max-width: 600px; /* Define a largura máxima para evitar que os formulários se estendam demais */
-  margin: 0 auto; /* Centraliza os formulários na página */
+  justify-content: space-evenly; 
+  max-width: 600px; 
+  margin: 0 auto; 
 }
 
-/*view/home/index.html.erb */
+
 .content {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
 
 .content-2, .content-work{
   width: 100% / 4;
@@ -89,12 +90,12 @@ nav a{
 
 }
 
-.Form, .Form-2, .Form-3, .Form-4, .Form-5{
+.Form, .Form-2, .Form-3, .Form-4{
   flex: 1; /* Distribui o espaço disponível igualmente entre os elementos */
   width: 300px;
   margin: 0 auto;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: .3rem;
+  margin-right: .3rem;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 5px;
@@ -102,48 +103,72 @@ nav a{
 
 }
   
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
+.Form-5, .Form-6, .Form-7{
+  flex: 1; 
+  width: 300px;
+  margin: 0 auto;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  order: -1;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+
+}
   
-  select, input[type="text"] {
-    width: calc(100% - 10px);
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+select, input[type="text"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
   
-  input[type="submit"], .link-voltar, .link-voltar {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-  }
+input[type="submit"], .link-voltar, .link-voltar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+
+}
 
   
-  input[type="submit"]:hover, .link-voltar:hover {
-    background-color: #45a049;
-  }
+input[type="submit"]:hover, .link-voltar:hover {
+  background-color: #45a049;
+
+}
   
   /*view/home/resultado.html.erb*/
-  .resultado {
-    margin-top: 20px;
-    font-size: 18px;
-  }
+.resultado {
+  margin-top: 20px;
+  font-size: 18px;
 
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
 
   
+.size-recomend{
+  margin-top: -5px;
+
+}

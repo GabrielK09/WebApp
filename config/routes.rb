@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   post '/check_answer', to: 'home#check_answer'
 
   post '/work_random', to: 'home#work_random'
+
+  get '/gerar_qr_code', to: 'home#gerar_qr_code'
+  post '/gerar_qr_code', to: 'home#gerar_qr_code'
 end

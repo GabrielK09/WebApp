@@ -66,5 +66,7 @@ group :development do
   # gem "spring"
 end
 
-
+gem 'time'
+gem 'date'
+gem 'rqrcode'
 gem "cicero"

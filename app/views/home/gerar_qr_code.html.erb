@@ -1,0 +1,7 @@
+<div class="content">
+<h2>QR Code Gerado:</h2>
+<% if flash[:notice_qr_code].present?%>
+    <%= flash[:notice_qr_code] %>
+<% end%>
+<%= raw @svg %>
+</div>

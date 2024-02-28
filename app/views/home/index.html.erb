@@ -54,7 +54,6 @@
 </div>
 
 <div class="Form-5">
-
   <%= form_tag('/index', method: :post, remote: true) do %>
   <%= label_tag :palavra, "Palavra: "%>
   <%= text_field_tag :palavra %>
@@ -68,4 +67,32 @@
 
 </div>
 
+<div class="Form-6">
+
+<%= form_tag('/gerar_qr_code', method: :post) do %>
+  <%= label_tag :url, 'Insira uma URL:' %><br>
+  <%= text_field_tag :url %><br>
+  <%= label_tag :size, "Tamanho: " %>
+  <p class='size-recomend'> Tamanho Recomendaod de 4 a 12
+  <%= text_field_tag :size %><br>
+  
+  <%= submit_tag 'Gerar QR Code' %>
+<% end %>
+
+</div>
+
+
+
+
+<div class="Form-7">
+  <%= form_tag( '/index' , remote: true) do |f| %>
+    <%= submit_tag 'Exibir a hora' %>
+
+    <% if flash[:notice_2].present? %>
+      <%= flash[:notice_2] %>
+
+    <% end %>
+  <% end %>
+
+</div>
 </div>
