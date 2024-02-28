@@ -8,11 +8,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "color" %>
 
   </head>
 
   <body>
-  <header class="Index-Header"> <h1>Funcionalidades Legais </header>
+  <header class="Index-Header" id="meu-header"> <h1>Funcionalidades Legais </header>
 
   <nav>
     <%= link_to "Instagram", "https://www.instagram.com/o_tal_do_tsuki/", class: 'social-media_1', target: '_blank'  %>
@@ -26,7 +27,7 @@
   </nav>
     <%= yield %>
 
-  <footer>
+  <footer id="meu-footer">
     <p>&copy; 2024 Página Pessoal de: <%= @meu_nome %></p>
   </footer>
 
