@@ -4,18 +4,22 @@
       <%= label_tag :word, "Informe a palavra a ser modificada: " %>
       <%= text_field_tag :word %><br>
 
-      <%= label_tag :style, "A Fonte" %>
-      <%= check_box_tag 'font', 'Kode Mono', false %>
+      <%= label_tag "A Fonte" %>
+
       <%= label_tag 'font', 'Kode Mono' %>
+      <%= check_box_tag 'font', 'Kode Mono', false %><br>
       
-      <%= check_box_tag 'font', 'Jacquarda Bastarda 9', false  %>
       <%= label_tag 'font', 'Jacquarda Bastarda 9' %>
-
-      <%= check_box_tag 'font', 'Padrao', false %>
+      <%= check_box_tag 'font', 'Jacquarda Bastarda 9', false  %><br>
+      
       <%= label_tag 'font', 'Padrão' %>
-
-      <%= check_box_tag 'font', 'Macodo', false%>
+      <%= check_box_tag 'font', 'Padrao', false %><br>
+      
       <%= label_tag 'font', 'Macodo(static)'%>
+      <%= check_box_tag 'font', 'Macodo', false%><br>
+
+      <%= label_tag 'font', 'Ubuntu Condensed (static)'%>
+      <%= check_box_tag 'font', 'Ubuntu Condensed' %><br>
 
       <%= submit_tag 'Modificar' %>
 
@@ -29,7 +33,7 @@
       <span>Fonte-Madimi One (Padrão): <p style='font-family: "Madimi One", sans-serif;"'>Sua String aqui</p></span>
       <span>Fonte-Jacquarda Bastarda 9: <p style='font-family: "Jacquarda Bastarda 9", serif;"'>Sua String aqui</p></span>
       <span>Fonte-Macondo (static): <p style='font-family: "Macondo", cursive;'>Sua String aqui</p></span>
-      <span></span>
+      <span>Font-Ubuntu Condensed (static): <p style='font-family: "Ubuntu Condensed", sans-serif;'>Sua String aqui</p></span>
       <span></span>
     </div>
   </div>
@@ -47,9 +51,17 @@
           <% elsif params[:font] == 'Macodo' %>
             <h2 style='font-family: "Macondo", cursive;'> <%= @word %> </h2>
 
+          <% elsif params[:font] == 'Ubuntu Condensed' %>
+            <h2 style='font-family: "Ubuntu Condensed", sans-serif;'> <%= @word %></h2>
+
           <% elsif params[:font] == 'Jacquarda Bastarda 9' %>
             <h2 style='font-family: "Jacquarda Bastarda 9", serif; text-decoration: underline;'> <%= @word %> </h2>
+          <% else %>
+            <strong> Você esqueceu de escolher sua fonte!!! </strong>
+            <h3>Seu Texto: <%= @word%></h3>
           <% end %>
+      <% else %>
+          <strong> Insira um texto! </strong>    
         <% end %>
     </div>
   </div>
