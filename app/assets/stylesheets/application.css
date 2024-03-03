@@ -122,7 +122,7 @@ nav a{
 .Form-5, .Form-6, .Form-7, .Form-8, .Form-9{
   flex: 1; 
   width: 300px;
-  margin: 0 auto;
+  margin: 0;
   margin-left: .5rem;
   margin-right: .5rem;
   padding: 20px;
@@ -132,7 +132,6 @@ nav a{
   order: -1;
 
 }
-
 
 .edit-word_a{
   background-color: #4CAF50;
@@ -177,6 +176,16 @@ input[type="submit"], .link-voltar {
   cursor: pointer;
   text-decoration: none;
 
+}
+
+.link-voltar-2{
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
   
