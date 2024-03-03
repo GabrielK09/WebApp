@@ -1,7 +1,8 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Madimi One", sans-serif;
+  /* */
 
 }
 
@@ -42,6 +43,7 @@ nav {
 nav a{
   color: #fff;
   margin: 0 0 0 1rem;
+  
 }
 
 .social-media_1:hover { 
@@ -105,12 +107,12 @@ nav a{
 
 }
 
-.Form, .Form-2, .Form-3, .Form-4{
+.Form, .Form-2, .Form-3, .Form-4, .Form-9, .Form-10{
   flex: 1; /* Distribui o espaço disponível igualmente entre os elementos */
   width: 300px;
   margin: 0 auto;
-  margin-left: .3rem;
-  margin-right: .3rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 5px;
@@ -122,8 +124,8 @@ nav a{
   flex: 1; 
   width: 300px;
   margin: 0 auto;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 5px;
@@ -131,6 +133,8 @@ nav a{
   order: -1;
 
 }
+
+
 
 label {
   display: block;

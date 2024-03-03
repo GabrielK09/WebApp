@@ -1,106 +1,121 @@
-<div class="Container ">
-<div class='Form'>
-  <%= form_tag( '/resultado' , remote: true) do |f| %>
-    
-    <label for="operacao">Selecione a operação:</label>
-    <%= select_tag 'operacao', options_for_select([['Soma', '+'], ['Subtração', '-'], ['Multiplicação', 'x'], ['Divisão', '÷']]), class: 'operador' %><br>
-    
-    <%= label_tag :nm1, "Número 1:", class: 'nm1' %>
-    <%= text_field_tag :nm1 %><br>
+<section class="sec-1">
+  <div class="Container ">
+    <div class='Form'>
+      <%= form_tag( '/resultado' , remote: true) do |f| %>
+        
+        <label for="operacao">Selecione a operação:</label>
+        <%= select_tag 'operacao', options_for_select([['Soma', '+'], ['Subtração', '-'], ['Multiplicação', 'x'], ['Divisão', '÷']]), class: 'operador' %><br>
+        
+        <%= label_tag :nm1, "Número 1:", class: 'nm1' %>
+        <%= text_field_tag :nm1 %><br>
 
-    <%= label_tag :nm2, "Número 2:", class: 'nm2' %>
-    <%= text_field_tag :nm2%><br>
-    <%= submit_tag 'Calcular', class: 'calcular' %>
+        <%= label_tag :nm2, "Número 2:", class: 'nm2' %>
+        <%= text_field_tag :nm2%><br>
+        <%= submit_tag 'Calcular', class: 'calcular' %>
 
-  <% end %>
-  
-</div>
-
-<div class="Form-2">
-  <%= form_tag( '/palavras', remote: true) do  %>
+      <% end %>
       
-      <%= label_tag :work, "Digite a palavra: "%>
-      <%= text_field_tag :work %>
+    </div>
 
-      <%= label_tag :qnt, "Quantidade: "%>
-      <%= text_field_tag :qnt %>
+    <div class="Form-2">
+      <%= form_tag( '/palavras', remote: true) do  %>
+          
+          <%= label_tag :work, "Digite a palavra: "%>
+          <%= text_field_tag :work %>
 
-      <%= submit_tag "Enviar" %>
-  <% end %>
-</div>
+          <%= label_tag :qnt, "Quantidade: "%>
+          <%= text_field_tag :qnt %>
 
-<div class="Form-3">
- <%= form_tag('/check_answer', method: 'post') do %>
-  <p>
-    <%= $num1 %> + <%= $num2  %> = <br>
-    Resposta: <%= text_field_tag :tentativa %>
+          <%= submit_tag "Enviar" %>
+      <% end %>
+    </div>
 
-  </p>
+    <div class="Form-3">
+    <%= form_tag('/check_answer', method: 'post') do %>
+      <p>
+        <%= $num1 %> + <%= $num2  %> = <br>
+        Resposta: <%= text_field_tag :tentativa %>
 
-  <%= submit_tag 'Verificar' %>
+      </p>
 
-<% end %>
-</div>
-
-<div class="Form-4">
-  <%= form_tag('/work_random', remote: true) do %> 
-  
-    <%= label_tag :letras, "Quantidade de Caracter: "%>
-    <%= text_field_tag :letras %>
-    <%= submit_tag 'Gerar' %>
-    
-  <% end%>
-
-</div>
-
-<div class="Form-5">
-  <%= form_tag('/index', method: :post, remote: true) do %>
-  <%= label_tag :palavra, "Palavra: "%>
-  <%= text_field_tag :palavra %>
-
-  <%= submit_tag "Inverter" %>
-
-  <% if flash[:notice].present? %>
-    <%= flash[:notice] %>
-  <% end %>
-<% end %>
-
-</div>
-
-<div class="Form-6">
-
-<%= form_tag('/gerar_qr_code', method: :post) do %>
-  <%= label_tag :url, 'Insira uma URL:' %><br>
-  <%= text_field_tag :url %><br>
-  <%= label_tag :size, "Tamanho: " %>
-  <p class='size-recomend'> Tamanho Recomendaod de 4 a 12
-  <%= text_field_tag :size %><br>
-  
-  <%= submit_tag 'Gerar QR Code' %>
-<% end %>
-
-</div>
-
-<div class="Form-7">
-  <%= form_tag( '/index' , remote: true) do |f| %>
-    <%= submit_tag 'Exibir a hora' %>
-
-    <% if flash[:notice_2].present? %>
-      <%= flash[:notice_2] %>
+      <%= submit_tag 'Verificar' %>
 
     <% end %>
-  <% end %>
+    </div>
 
-</div>
+    <div class="Form-4">
+      <%= form_tag('/work_random', remote: true) do %> 
+      
+        <%= label_tag :letras, "Quantidade de Caracter: "%>
+        <%= text_field_tag :letras %>
+        <%= submit_tag 'Gerar' %>
+        
+      <% end%>
 
+    </div>
 
+    <div class="Form-5">
+      <%= form_tag('/index', method: :post, remote: true) do %>
+      <%= label_tag :palavra, "Palavra: "%>
+      <%= text_field_tag :palavra %>
 
-<div class="Form-8">
-<%= form_tag('/index') do %>
-  <%= label_tag 'color', 'Selecione uma cor:' %>
-  <%= color_field_tag 'color', class: 'color-selector' %>
-  <%= submit_tag 'Resetar' %>
-<% end %>
+      <%= submit_tag "Inverter" %>
 
-</div>
-</div>
+      <% if flash[:notice].present? %>
+        <%= flash[:notice] %>
+      <% end %>
+    <% end %>
+
+    </div>
+
+    <div class="Form-6">
+    <%= form_tag('/gerar_qr_code', method: :post) do %>
+      <%= label_tag :url, 'Insira uma URL:' %><br>
+      <%= text_field_tag :url %><br>
+      <%= label_tag :size, "Tamanho: " %>
+      <p class='size-recomend'> Tamanho Recomendaod de 4 a 12
+      <%= text_field_tag :size %><br>
+      
+      <%= submit_tag 'Gerar QR Code' %>
+    <% end %>
+
+    </div>
+
+    <div class="Form-7">
+      <%= form_tag( '/index' , remote: true) do |f| %>
+        <%= submit_tag 'Exibir a hora' %>
+
+        <% if flash[:notice_2].present? %>
+          <%= flash[:notice_2] %>
+
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <div class="Form-8">
+    <%= form_tag('/index') do %>
+      <%= label_tag 'color', 'Selecione uma cor:' %>
+      <%= color_field_tag 'color', class: 'color-selector' %>
+      <%= submit_tag 'Resetar' %>
+    <% end %>
+
+    </div>
+
+    <div class="Form-9">
+      <%= form_tag('/index', remote: true) do %>
+        <%= label_tag :original_word, 'Digite uma palavra: '%><br>
+        <%= text_field_tag :original_word %>
+        <%= submit_tag 'Embaralhar' %>
+
+        <% if flash[:notice_word_2]%>
+          <%= flash[:notice_word_2]%>
+        <% end%>
+        <% end %>
+    </div>
+  </div>  
+
+  <div class="Form-10">
+    <%= link_to "Editor de Palavras", edit_word_path %>
+  </div>
+</section>

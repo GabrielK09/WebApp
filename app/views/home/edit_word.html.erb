@@ -1,0 +1,30 @@
+<div class="Form-10">
+  <%= form_tag('/index', remote: true) do |f| %>
+    <%= label_tag :word, "Informe a palavra a ser modificada: " %>
+    <%= text_field_tag :word %><br>
+
+    <%= label_tag :style, "A Fonte" %>
+    <%= check_box_tag 'font', 'Kode Mono', false %>
+    <%= label_tag 'font', 'Kode Mono' %>
+    
+    <%= check_box_tag 'font', 'Jacquarda Bastarda 9', false  %>
+    <%= label_tag 'font', 'Jacquarda Bastarda 9' %>
+
+    <%= check_box_tag 'font', 'Padrao' %>
+    <%= label_tag 'font', 'Padrão' %>
+
+    <%= submit_tag 'Modificar' %>
+
+    <% if @word.present? %>
+      <% if params[:font] == 'Kode Mono' %>
+        <h2 style='font-family: "Kode Mono", monospace; text-decoration: underline;'> <%= @word %> </h2>
+
+      <% elsif params[:font] == 'Padrao'%>
+        <h2 style='font-family: "Madimi One", sans-serif; text-decoration: underline;'> <%= @word %> </h2>
+
+      <% elsif params[:font] == 'Jacquarda Bastarda 9' %>
+        <h2 style='font-family: "Jacquarda Bastarda 9", serif; text-decoration: underline;'> <%= @word %> </h2>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
