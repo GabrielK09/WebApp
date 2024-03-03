@@ -14,28 +14,43 @@
       <%= check_box_tag 'font', 'Padrao', false %>
       <%= label_tag 'font', 'Padrão' %>
 
+      <%= check_box_tag 'font', 'Macodo', false%>
+      <%= label_tag 'font', 'Macodo(static)'%>
+
       <%= submit_tag 'Modificar' %>
 
-      <% if @word.present? %>
-        <% if params[:font] == 'Kode Mono' %>
-          <h2 style='font-family: "Kode Mono", monospace; text-decoration: underline;'> <%= @word %> </h2>
-
-        <% elsif params[:font] == 'Padrao'%>
-          <h2 style='font-family: "Madimi One", sans-serif; text-decoration: underline;'> <%= @word %> </h2>
-
-        <% elsif params[:font] == 'Jacquarda Bastarda 9' %>
-          <h2 style='font-family: "Jacquarda Bastarda 9", serif; text-decoration: underline;'> <%= @word %> </h2>
-        <% end %>
-      <% end %>
     <% end %>
   </div>
 
-  <div class="mural">
-    <h1>Exemplo Fontes: </h1>
-    <span>Fonte-Kode Mono: <p style='font-family: "Kode Mono", monospace;"'>A</p></span>
-    <span>Fonte-Madimi One (Padrão): <p style='font-family: "Madimi One", sans-serif;"'>A</p></span>
-    <span>Fonte-Jacquarda Bastarda 9: <p style='font-family: "Jacquarda Bastarda 9", serif;"'>A</p></span>
-
+  <div class='Form-10'>
+    <div class="mural">
+      <h1>Exemplo Fontes: </h1>
+      <span>Fonte-Kode Mono: <p style='font-family: "Kode Mono", monospace;"'>Sua String aqui</p></span>
+      <span>Fonte-Madimi One (Padrão): <p style='font-family: "Madimi One", sans-serif;"'>Sua String aqui</p></span>
+      <span>Fonte-Jacquarda Bastarda 9: <p style='font-family: "Jacquarda Bastarda 9", serif;"'>Sua String aqui</p></span>
+      <span>Fonte-Macondo (static): <p style='font-family: "Macondo", cursive;'>Sua String aqui</p></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 
+  <div class='Form-10'>
+    <div class='strings'>
+      <h1>Texto modificado: </h1>
+      <% if @word.present? %>
+          <% if params[:font] == 'Kode Mono' %>
+            <h2 style='font-family: "Kode Mono", monospace; text-decoration: underline;'> <%= @word %> </h2>
+
+          <% elsif params[:font] == 'Padrao'%>
+            <h2 style='font-family: "Madimi One", sans-serif; text-decoration: underline;'> <%= @word %> </h2>
+
+          <% elsif params[:font] == 'Macodo' %>
+            <h2 style='font-family: "Macondo", cursive;'> <%= @word %> </h2>
+
+          <% elsif params[:font] == 'Jacquarda Bastarda 9' %>
+            <h2 style='font-family: "Jacquarda Bastarda 9", serif; text-decoration: underline;'> <%= @word %> </h2>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
 </div>
