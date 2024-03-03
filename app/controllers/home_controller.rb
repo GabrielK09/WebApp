@@ -26,9 +26,6 @@ class HomeController < ApplicationController
       flash[:notice_word_2] = "Palavra Embaralhada: #{@word}"
     end
 
-    @word = params[:word]
-    @word = params[:word]
-    @word = params[:word]
     #flash[:notice_gambirra] = "<h2 style='font-family: \"Kode Mono\", monospace; text-decoration: 3px underline'>#{@word}</h2>".html_safe
     
   end
@@ -91,6 +88,10 @@ class HomeController < ApplicationController
     @svg = qr.as_svg(module_size: @size)
 
     flash[:notice_qr_code] = "Link: #{@url}"
+  end
+
+  def edit_word
+    @word = params[:word]
   end
 
   def sobre
