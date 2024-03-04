@@ -8,28 +8,36 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "edit_word" %>
     <%= javascript_include_tag "color" %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">  
   </head>
+  <body id="meu-body">
+    <header class="Index-Header" id="meu-header"> <h1>Funcionalidades Legais </header>
 
-  <body>
-  <header class="Index-Header" id="meu-header"> <h1>Funcionalidades Legais </header>
+    <nav>
+      <%= link_to "Instagram", "https://www.instagram.com/o_tal_do_tsuki/", class: 'social-media_1', target: '_blank'  %>
+      <%= link_to "GitHub", "https://github.com/TsukiKtk?tab=repositories", class: 'social-media_2', target: '_blank'  %>
+      <%= link_to "Twitch", "https://www.twitch.tv/otaldotsuki", class: 'social-media_3', target: '_blank'  %>
+      <%= link_to "WhatsApp", "https://wa.me/#{@numero_whatsapp}", class: 'social-meida_4', target: '_blank'  %>
+      <%= link_to "E-mail", "mailto:gabikochem55@gmail.com", class: 'social-meida_5', target: '_blank' %>
+      <%= link_to "Sobre", 'sobre', class: 'about' %> 
+      
 
-  <nav>
-    <%= link_to "Instagram", "https://www.instagram.com/o_tal_do_tsuki/", class: 'social-media_1', target: '_blank'  %>
-    <%= link_to "GitHub", "https://github.com/TsukiKtk?tab=repositories", class: 'social-media_2', target: '_blank'  %>
-    <%= link_to "Twitch", "https://www.twitch.tv/otaldotsuki", class: 'social-media_3', target: '_blank'  %>
-    <%= link_to "WhatsApp", "https://wa.me/#{@numero_whatsapp}", class: 'social-meida_4', target: '_blank'  %>
-    <%= link_to "E-mail", "mailto:gabikochem55@gmail.com", class: 'social-meida_5', target: '_blank' %>
-    <%= link_to "Sobre", 'sobre', class: 'about' %> 
-    
+    </nav>
+      <%= yield %>
 
-  </nav>
-    <%= yield %>
-
-  <footer id="meu-footer">
-    <p>&copy; 2024 Página Pessoal de: <%= @meu_nome %></p>
-  </footer>
+    <footer id="meu-footer">
+      <p>&copy; 2024 Página Pessoal de: <%= @meu_nome %></p>
+    </footer>
 
   </body>
 </html>

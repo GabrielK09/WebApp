@@ -19,6 +19,15 @@ class HomeController < ApplicationController
     if @x.present?
       flash[:notice_2] = "Data Atual: #{@x}"
     end
+
+    @original_word = params[:original_word]
+    if @original_word.present?
+      @word = @original_word.chars.shuffle.join
+      flash[:notice_word_2] = "Palavra Embaralhada: #{@word}"
+    end
+
+    #flash[:notice_gambirra] = "<h2 style='font-family: \"Kode Mono\", monospace; text-decoration: 3px underline'>#{@word}</h2>".html_safe
+    
   end
 
   def resultado
@@ -79,6 +88,10 @@ class HomeController < ApplicationController
     @svg = qr.as_svg(module_size: @size)
 
     flash[:notice_qr_code] = "Link: #{@url}"
+  end
+
+  def edit_word
+    @word = params[:word]
   end
 
   def sobre
