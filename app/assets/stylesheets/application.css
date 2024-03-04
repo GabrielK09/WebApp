@@ -157,7 +157,6 @@ input[type="submit"], .link-voltar, .link-voltar {
   text-decoration: none;
 
 }
-
   
 input[type="submit"]:hover, .link-voltar:hover {
   background-color: #45a049;
@@ -181,7 +180,6 @@ footer {
   width: 100%;
 
 }
-
   
 .size-recomend{
   margin-top: -5px;

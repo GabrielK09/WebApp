@@ -85,4 +85,9 @@ class HomeController < ApplicationController
     render layout: 'no-back'
 
   end
+
+  def palavra_2
+    texto.split('').shuffle.join('')
+
+  end
 end
