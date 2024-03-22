@@ -18,4 +18,19 @@ Rails.application.routes.draw do
 
   get '/edit_word', to: 'home#edit_word'
   post '/edit_word', to: 'home#edit_word'
+
+  get '/index2', to: 'home#index2'
+  post '/index2', to: 'home#index2'
+
+  get '/calculate_index2', to: 'home#calculate_index2'
+  post '/calculate_index2', to: 'home#calculate_index2'
+
+  get '/love_porce', to: 'home#love_porce'
+  post '/love_porce', to: 'home#love_porce'
+
+  get '/imc', to: 'home#imc'
+  post '/imc', to: 'home#imc'
+
+  get '/termo2', to: 'home#termo2'
+  post '/termo2', to: 'home#termo2'
 end

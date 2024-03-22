@@ -1,0 +1,30 @@
+<div class="Container-2">
+    <div class='Form-1-index2'>
+        <%= form_tag( '/index2', remote: true) do |f| %>
+            <%= label_tag :lista, "Ordenar lista" %>
+            <%= text_field_tag :lista %>
+            <%= submit_tag 'Ordenar' %><br>
+
+            <% if flash[:notice].present? %>
+                <%= flash[:notice] %>
+            
+            <% end %>
+        <% end %>               
+    </div>
+
+    <%= render "calculate_index2" %>
+    <%= render "love_porce" %>
+    <%= render "imc" %>
+    <div class='Form-3-index2'>
+        <%= form_tag('/termo2', remote: true) do |f| %>
+            <%= label_tag :qnt, "Digite a quantidade de letras" %>
+            <%= text_field_tag :qnt%>
+
+            <%= submit_tag 'Gerar' %>
+
+        <% end %>               
+    </div>
+</div>
+
+
+<%= link_to "Voltar", './', class: 'link-voltar' %>

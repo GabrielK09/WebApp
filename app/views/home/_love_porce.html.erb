@@ -1,0 +1,15 @@
+<div class='Form-3-index2'>
+  <%= form_tag('/love_porce', remote: true) do |f| %>
+    <%= label_tag :nome1, "Digite o primeiro nome" %>
+    <%= text_field_tag :nome1 %>
+    
+    <%= label_tag :nome2, "Digite o segundo nome" %>
+    <%= text_field_tag :nome2 %>
+    
+    <%= submit_tag 'Calcular porcentagem de amor' %>
+
+    <% if flash[:notice3].present? %>
+      <%= flash[:notice3] %>
+    <% end %>
+  <% end %>               
+</div>

@@ -1,0 +1,15 @@
+<div class='Form-4-index2'>
+  <%= form_tag('/imc', remote: true) do |f| %>
+    <%= label_tag :p, "Digite seu peso" %>
+    <%= text_field_tag :p %>
+    
+    <%= label_tag :a, "Digite a sua altura (Ex: 1.75)" %>
+    <%= text_field_tag :a %>
+    
+    <%= submit_tag 'Calcular IMC' %>
+
+    <% if flash[:imc].present? %>
+      <%= flash[:imc] %>
+    <% end %>
+  <% end %>               
+</div>

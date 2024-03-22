@@ -82,7 +82,14 @@ nav a{
 .Container {
   display: flex;
   justify-content: space-evenly; 
-  max-width: 600px; 
+  max-width: 1000px; 
+  margin: 0 auto; 
+}
+
+.Container-2{
+  display: flex;
+  justify-content: space-evenly; 
+  max-width: 1000px; 
   margin: 0 auto; 
 }
 
@@ -106,7 +113,7 @@ nav a{
 
 }
 
-.Form, .Form-2, .Form-3, .Form-4{
+.Form, .Form-2, .Form-3, .Form-4, .Form-2-index2, .Form-3-index2{
   flex: 1; /* Distribui o espaço disponível igualmente entre os elementos */
   width: 300px;
   margin: 0 auto;
@@ -119,7 +126,19 @@ nav a{
 
 }
 
-.Form-5, .Form-6, .Form-7, .Form-8, .Form-9{
+.Form-1-index2, .Form-4-index2{
+  flex: 1; /* Distribui o espaço disponível igualmente entre os elementos */
+  width: 300px;
+  margin: 0 auto;
+  margin-left: .5rem;
+  margin-right: .9rem;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Form-5, .Form-6, .Form-7, .Form-8{
   flex: 1; 
   width: 300px;
   margin: 0;
@@ -133,13 +152,18 @@ nav a{
 
 }
 
-.edit-word_a{
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
+.Form-9{
+  flex: 1; 
+  width: 700px;
+  margin: 0 auto;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  order: -1;
+  
 }
 
 .Form-10 input[type="text"] {
@@ -186,15 +210,25 @@ input[type="submit"], .link-voltar {
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
+
 }
 
-
+.Edit_word_a{
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
   
+}
+
 input[type="submit"]:hover, .link-voltar:hover {
   background-color: #45a049;
 
 }
-  
+
   /*view/home/resultado.html.erb*/
 .resultado {
   margin-top: 20px;

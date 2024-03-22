@@ -1,0 +1,12 @@
+<div class='Form-2-index2'>
+    <%= form_tag( '/calculate_index2', remote: true) do |f| %>
+        <%= label_tag :numero, "Digite alguns números" %>
+        <%= text_field_tag :numero %>
+        <%= submit_tag 'Mostrar soma de todos os númros' %>
+
+        <% if flash[:notice2].present? %>
+            <%= flash[:notice2] %>
+            
+        <% end %>
+    <% end %>               
+</div>
