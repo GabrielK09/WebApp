@@ -225,7 +225,9 @@ class HomeController < ApplicationController
   def termo2
     @qnt_letras = params[:qnt].to_i
 
-    x = SecureRandom.hex(@qnt_letras + 1)
+    letras = ('a'..'z').to_a  # Array contendo todas as letras do alfabeto
+    aleatorias = Array.new(@qnt_letras) { letras.sample }  # Seleciona aleatoriamente n letras do array
+    x = aleatorias.join("")
     flash[:woks] = x
   end
 end
