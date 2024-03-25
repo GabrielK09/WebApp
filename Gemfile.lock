@@ -164,6 +164,9 @@ GEM
       chunky_png (~> 1.0)
       rqrcode_core (~> 1.0)
     rqrcode_core (1.2.0)
+    rqrcode_png (0.1.5)
+      chunky_png
+      rqrcode
     securerandom (0.3.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -211,6 +214,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.1)
   rqrcode
+  rqrcode_png
   securerandom
   sprockets-rails
   sqlite3 (~> 1.4)

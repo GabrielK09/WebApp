@@ -81,12 +81,33 @@ class HomeController < ApplicationController
 
   def gerar_qr_code
     @url = params[:url]
-    @size = params[:size].to_i
-
+    #@size = params[:size].to_i
+  
     qr = RQRCode::QRCode.new(@url)
-    @svg = qr.as_svg(module_size: @size)
-
+    @png = qr.as_png(
+      bit_depth: 1,
+      border_modules: 4,
+      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+      color: "black",
+      file: nil,
+      fill: "white",
+      module_px_size: 6,
+      resize_exactly_to: false,
+      resize_gte_to: false,
+      size: 500
+    )
+  
     flash[:notice_qr_code] = "Link: #{@url}"
+  end
+
+  def download_qr_code
+    url = params[:url]
+    module_size = 10  
+    
+    qr = RQRCode::QRCode.new(url, size: module_size, level: :h)
+    png = qr.as_png(size: 500)
+    
+    send_data png.to_s, type: 'image/png', disposition: 'attachment', filename: 'qr_code.png'
   end
 
   def edit_word

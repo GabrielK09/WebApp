@@ -69,5 +69,6 @@ end
 gem 'time'
 gem 'date'
 gem 'rqrcode'
+gem 'rqrcode_png'
 gem "cicero"
 gem "securerandom"

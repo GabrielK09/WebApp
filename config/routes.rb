@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get '/gerar_qr_code', to: 'home#gerar_qr_code'
   post '/gerar_qr_code', to: 'home#gerar_qr_code'
 
+  get 'download_qr_code', to: 'home#download_qr_code', as: 'download_qr_code'
+
+
   get '/edit_word', to: 'home#edit_word'
   post '/edit_word', to: 'home#edit_word'
 

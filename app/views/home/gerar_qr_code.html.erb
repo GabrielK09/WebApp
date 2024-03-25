@@ -1,7 +1,10 @@
 <div class="content">
-<h2>QR Code Gerado:</h2>
-<% if flash[:notice_qr_code].present?%>
+  <h2>QR Code Gerado:</h2>
+  <% if flash[:notice_qr_code].present? %>
     <%= flash[:notice_qr_code] %>
-<% end%>
-<%= raw @svg %>
+  <% end %>
+  <% if @png.present? %>
+    <%= image_tag 'data:image/png;base64,' + Base64.encode64(@png.to_blob) %>
+    <%= link_to 'Download QR Code (PNG)', download_qr_code_path(format: :png, size: params[:size], url: params[:url]), id: 'download_qr_code' %>
+  <% end %>
 </div>
